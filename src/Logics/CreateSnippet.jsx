@@ -1,23 +1,23 @@
 
-
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import {toast} from "react-hot-toast";
+import { toast } from "react-hot-toast";
+import CodeMirror from "@uiw/react-codemirror";
+import { javascript } from "@codemirror/lang-javascript";
+import { oneDark } from "@codemirror/theme-one-dark";
 
 export default function CreateSnippet() {
   const navigate = useNavigate();
 
-  
-
   const submitHandler = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     try {
       const addSnippet = { title, language, code, note, approach };
 
       if (!title || !language || !code) {
         toast.error("Enter mandatory fields...");
-        return;  
+        return;
       }
 
       const response = await fetch("http://localhost:4000/user/v1/createSnippet", {
@@ -33,18 +33,14 @@ export default function CreateSnippet() {
       }
 
       const result = await response.json();
-      
-      
     } catch (error) {
       console.error("Fetch error:", error.message);
       toast.error("Something went wrong...");
     }
 
-    if(!error)
-    {
+    if (!error) {
       navigate("/getAllData");
     }
-
   };
 
   const [title, setTitle] = useState("");
@@ -61,13 +57,14 @@ export default function CreateSnippet() {
           Create Snippet
         </h2>
 
-        
-
         <form onSubmit={submitHandler} className="space-y-6">
           
           <div className="flex space-x-4">
             <div className="w-full">
-              <label htmlFor="title" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label
+                htmlFor="title"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
                 Title of Code
               </label>
               <input
@@ -81,7 +78,10 @@ export default function CreateSnippet() {
             </div>
 
             <div className="w-full">
-              <label htmlFor="language" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label
+                htmlFor="language"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
                 Language
               </label>
               <input
@@ -95,23 +95,31 @@ export default function CreateSnippet() {
             </div>
           </div>
 
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="col-span-1">
-              <label htmlFor="code" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                Code
-              </label>
-              <textarea
-                id="code"
-                placeholder="Enter code here"
-                value={code}
-                onChange={(e) => setCode(e.target.value)}
-                className="w-full h-[70vh] px-4 py-2 mt-1 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200"
-              ></textarea>
-            </div>
+         
+          <div>
+            <label
+              htmlFor="code"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+            >
+              Code
+            </label>
+            <CodeMirror
+              value={code}
+              height="400px"
+              extensions={[javascript()]}
+              theme={oneDark}
+              onChange={(value) => setCode(value)}
+              className="border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none"
+            />
+          </div>
 
-            <div className="col-span-1">
-              <label htmlFor="note" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            
+            <div>
+              <label
+                htmlFor="note"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
                 Notes
               </label>
               <textarea
@@ -119,12 +127,16 @@ export default function CreateSnippet() {
                 placeholder="Create notes here"
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
-                className="w-full h-[70vh] px-4 py-2 mt-1 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200"
+                className="w-full h-96 px-4 py-2 mt-1 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200"
               ></textarea>
             </div>
 
-            <div className="col-span-1">
-              <label htmlFor="approach" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            
+            <div>
+              <label
+                htmlFor="approach"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
                 Approach for Code
               </label>
               <textarea
@@ -132,13 +144,13 @@ export default function CreateSnippet() {
                 placeholder="Create approach here"
                 value={approach}
                 onChange={(e) => setApproach(e.target.value)}
-                className="w-full h-[70vh] px-4 py-2 mt-1 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200"
+                className="w-full h-96 px-4 py-2 mt-1 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200"
               ></textarea>
             </div>
           </div>
 
           <div className="mt-6">
-            <button 
+            <button
               type="submit"
               className="w-full py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
@@ -150,3 +162,4 @@ export default function CreateSnippet() {
     </div>
   );
 }
+
