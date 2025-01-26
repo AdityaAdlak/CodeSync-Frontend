@@ -5,9 +5,10 @@ import {toast,Toaster} from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
 
 
+require("dotenv").config();
 export default function GetAllSnippets(e) {
    
- 
+    const API_URL = process.env.REACT_APP_API_URL;
     const navigate = useNavigate();
     const [getdt, setdt] = useState([]); 
 
@@ -19,7 +20,8 @@ export default function GetAllSnippets(e) {
     async function getData() {
         
         try {
-            const response = await fetch("http://localhost:4000/user/v1/getAllData");
+            // const response = await fetch("http://localhost:4000/user/v1/getAllData");
+            const response = await fetch(`${API_URL}/user/v1/getAllData`);
 
             if (!response.ok) {
                 console.log("Could not get response...");

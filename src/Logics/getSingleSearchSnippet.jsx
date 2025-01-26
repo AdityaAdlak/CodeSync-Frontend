@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 
+require("dotenv").config();
 export default function GetSingleSearchedSnippet({ getTitle }) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
+    const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         if (getTitle) {
@@ -11,7 +13,7 @@ export default function GetSingleSearchedSnippet({ getTitle }) {
                 setData(null);
                 try {
                     const response = await fetch(
-                        `http://localhost:4000/user/v1/searchSnippet/${getTitle}`,
+                        `${API_URL}/user/v1/searchSnippet/${getTitle}`,
                         {
                             method: "GET",
                         }

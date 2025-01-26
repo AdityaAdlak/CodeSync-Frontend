@@ -4,7 +4,10 @@ import { useState } from "react";
 import {toast} from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
 
+require("dotenv").config();
+
 export default function Login() {
+  const API_URL = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
 
   const[email,setEmail] = useState("");
@@ -17,7 +20,15 @@ export default function Login() {
     try {
       const user = {email,password};
       
-      const response = await fetch("http://localhost:4000/user/v1/login", {
+      // const response = await fetch("http://localhost:4000/user/v1/login", {
+      //   method: "POST",
+      //   body: JSON.stringify(user),
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // });
+
+      const response = await fetch(`${API_URL}/user/v1/login`, {
         method: "POST",
         body: JSON.stringify(user),
         headers: {

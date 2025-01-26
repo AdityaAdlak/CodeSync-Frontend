@@ -19,7 +19,16 @@ export default function SignUp() {
   
     try {
       const user = { name, email, password };
-      const response = await fetch("http://localhost:4000/user/v1/signUp", {
+      const API_URL = process.env.REACT_APP_API_URL;
+      // const response = await fetch("http://localhost:4000/user/v1/signUp", {
+      //   method: "POST",
+      //   body: JSON.stringify(user),
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // });
+
+      const response = await fetch(`${API_URL}/user/v1/signUp`, {
         method: "POST",
         body: JSON.stringify(user),
         headers: {

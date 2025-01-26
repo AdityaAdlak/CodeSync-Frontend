@@ -5,7 +5,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import {toast} from "react-hot-toast";
 
 
+require("dotenv").config();
 export default function GetSearchedSnippetExist() {
+  const API_URL = process.env.REACT_APP_API_URL;
   const { state } = useLocation();
   const { searchTag, searchLanguage } = state || {};
   const [finalData, setFinalData] = useState([]);
@@ -16,8 +18,12 @@ export default function GetSearchedSnippetExist() {
     if (searchTag && searchLanguage) {
       async function fetchSnippets() {
         try {
+          // const response = await fetch(
+          //   `http://localhost:4000/user/v1/getdata/${searchLanguage}/${searchTag}`
+          // );
+
           const response = await fetch(
-            `http://localhost:4000/user/v1/getdata/${searchLanguage}/${searchTag}`
+            `${API_URL}/user/v1/getdata/${searchLanguage}/${searchTag}`
           );
           const result = await response.json();
 

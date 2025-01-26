@@ -6,11 +6,15 @@ import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import { oneDark } from "@codemirror/theme-one-dark";
 
-// require("dotenv").config();
 
 
+
+require("dotenv").config();
 
 export default function CreateSnippet() {
+
+ 
+  const API_URL = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
 
   const submitHandler = async (e) => {
@@ -24,7 +28,15 @@ export default function CreateSnippet() {
         return;
       }
 
-      const response = await fetch("http://localhost:4000/user/v1/createSnippet", {
+      // const response = await fetch("http://localhost:4000/user/v1/createSnippet", {
+      //   method: "POST",
+      //   body: JSON.stringify(addSnippet),
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // });
+
+      const response = await fetch(`${API_URL}/user/v1/createSnippet`, {
         method: "POST",
         body: JSON.stringify(addSnippet),
         headers: {
