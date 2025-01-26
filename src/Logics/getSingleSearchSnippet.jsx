@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-require("dotenv").config();
+
 export default function GetSingleSearchedSnippet({ getTitle }) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);

@@ -4,7 +4,7 @@ import { useState } from "react";
 import {toast} from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
 
-require("dotenv").config();
+
 
 export default function Login() {
   const API_URL = process.env.REACT_APP_API_URL;

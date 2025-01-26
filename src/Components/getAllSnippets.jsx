@@ -5,7 +5,6 @@ import {toast,Toaster} from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
 
 
-require("dotenv").config();
 export default function GetAllSnippets(e) {
    
     const API_URL = process.env.REACT_APP_API_URL;

@@ -9,12 +9,14 @@ import { oneDark } from "@codemirror/theme-one-dark";
 
 
 
-require("dotenv").config();
+
 
 export default function CreateSnippet() {
 
  
   const API_URL = process.env.REACT_APP_API_URL;
+  console.log(API_URL)
+  console.log("API kA URL "+process.env.REACT_APP_API_URL)
   const navigate = useNavigate();
 
   const submitHandler = async (e) => {

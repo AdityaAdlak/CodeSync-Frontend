@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import {toast} from "react-hot-toast";
 
 
-require("dotenv").config();
+
 export default function GetSearchedSnippetExist() {
   const API_URL = process.env.REACT_APP_API_URL;
   const { state } = useLocation();
