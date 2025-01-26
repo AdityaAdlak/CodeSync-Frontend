@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 //dont rerender and send values
 import CodeRunner from "./ManageCodeRunner";
 import LiveCodeWithSnippetSearch from "./AvailableCodeRunner.jsx";
-import Footer from "./Footer.jsx";
+
 
 
 const HomePage = () => {
@@ -32,7 +32,7 @@ const HomePage = () => {
             Welcome to CodeSync
           </h1>
           <p className="text-lg md:text-2xl mb-6 max-w-xl mx-auto">
-            A platform to manage your coding progress, store snippets, and track your achievements across multiple platforms.
+             A platform to efficiently manage your coding snippets, organize approaches, and optimize your workflow.
           </p>
          
           <button
@@ -57,3 +57,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+

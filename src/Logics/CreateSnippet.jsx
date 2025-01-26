@@ -6,6 +6,10 @@ import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import { oneDark } from "@codemirror/theme-one-dark";
 
+// require("dotenv").config();
+
+
+
 export default function CreateSnippet() {
   const navigate = useNavigate();
 

@@ -1,5 +1,9 @@
+
+
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import {toast} from "react-hot-toast";
+
 
 export default function GetSearchedSnippetExist() {
   const { state } = useLocation();
@@ -23,7 +27,7 @@ export default function GetSearchedSnippetExist() {
             setFinalData(result.data);
           }
         } catch (err) {
-          setError("Error fetching data. Please try again later.");
+          toast.error("Something went wrong...")
         }
       }
       fetchSnippets();

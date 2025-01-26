@@ -57,7 +57,7 @@ export default function GetSingleSearchedSnippet({ getTitle }) {
                                     </p>
 
                                     <div className="mt-4 space-y-6">
-                                        {/* Code Section */}
+                                     
                                         <div>
                                             <h4 className="text-lg font-semibold mb-2">Code:</h4>
                                             <pre className="bg-gray-100 dark:bg-gray-700 p-3 rounded-md overflow-auto text-sm">
@@ -65,7 +65,7 @@ export default function GetSingleSearchedSnippet({ getTitle }) {
                                             </pre>
                                         </div>
 
-                                        {/* Approach Section */}
+                                        
                                         <div>
                                             <h4 className="text-lg font-semibold mb-2">Approach:</h4>
                                             <p className="text-sm leading-relaxed whitespace-pre-wrap">
@@ -73,7 +73,6 @@ export default function GetSingleSearchedSnippet({ getTitle }) {
                                             </p>
                                         </div>
 
-                                        {/* Notes Section */}
                                         <div>
                                             <h4 className="text-lg font-semibold mb-2">Notes:</h4>
                                             <p className="text-sm leading-relaxed whitespace-pre-wrap">

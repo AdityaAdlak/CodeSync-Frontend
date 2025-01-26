@@ -40,6 +40,7 @@ export default function SearchSnippet() {
                             type="submit"
                             className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:ring focus:ring-blue-400 focus:outline-none dark:bg-blue-500 dark:hover:bg-blue-600"
                         >
+                            
                             Search Snippet
                         </button>
                     </div>
