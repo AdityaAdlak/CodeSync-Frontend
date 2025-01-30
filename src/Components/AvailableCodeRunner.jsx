@@ -49,7 +49,7 @@ const LiveCodeWithSnippetSearch = () => {
           setCurrentLine(0);
           setCharIndex(0);
           setDisplayedCode("");
-        }, 2000); // Restart after 2 seconds
+        }, 2000); 
       }
     };
 
