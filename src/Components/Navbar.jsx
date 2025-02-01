@@ -61,7 +61,7 @@ export default function Navbar({ toggleDarkMode, darkMode }) {
             <DashMode toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
           </div>
 
-          {/* Mobile Menu Button */}
+         
           <div className="sm:hidden flex items-center">
             <button
               onClick={toggleMobileMenu}

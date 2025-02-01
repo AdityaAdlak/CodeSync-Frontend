@@ -18,12 +18,9 @@ export default function GetSearchedSnippetExist() {
     if (searchTag && searchLanguage) {
       async function fetchSnippets() {
         try {
-          // const response = await fetch(
-          //   `http://localhost:4000/user/v1/getdata/${searchLanguage}/${searchTag}`
-          // );
 
           const response = await fetch(
-            `${API_URL}/user/v1/getdata/${searchLanguage}/${searchTag}`
+            `https://codesync-backend-6-rlsb.onrender.com/user/v1/getdata/${searchLanguage}/${searchTag}`
           );
           const result = await response.json();
 

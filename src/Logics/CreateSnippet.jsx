@@ -30,15 +30,7 @@ export default function CreateSnippet() {
         return;
       }
 
-      // const response = await fetch("http://localhost:4000/user/v1/createSnippet", {
-      //   method: "POST",
-      //   body: JSON.stringify(addSnippet),
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      // });
-
-      const response = await fetch(`${API_URL}/user/v1/createSnippet`, {
+      const response = await fetch(`https://codesync-backend-6-rlsb.onrender.com/user/v1/createSnippet`, {
         method: "POST",
         body: JSON.stringify(addSnippet),
         headers: {

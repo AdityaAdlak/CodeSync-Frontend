@@ -13,7 +13,7 @@ export default function GetSingleSearchedSnippet({ getTitle }) {
                 setData(null);
                 try {
                     const response = await fetch(
-                        `${API_URL}/user/v1/searchSnippet/${getTitle}`,
+                        `https://codesync-backend-6-rlsb.onrender.com/user/v1/searchSnippet/${getTitle}`,
                         {
                             method: "GET",
                         }

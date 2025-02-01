@@ -19,8 +19,8 @@ export default function GetAllSnippets(e) {
     async function getData() {
         
         try {
-            // const response = await fetch("http://localhost:4000/user/v1/getAllData");
-            const response = await fetch(`${API_URL}/user/v1/getAllData`);
+         
+            const response = await fetch("https://codesync-backend-6-rlsb.onrender.com/user/v1/getAllData");
 
             if (!response.ok) {
                 console.log("Could not get response...");
@@ -38,7 +38,7 @@ export default function GetAllSnippets(e) {
     {
         try {
             console.log(id);
-            const response = await fetch(`http://localhost:4000/user/v1/deleteSnippet/${id}`,{
+            const response = await fetch(`https://codesync-backend-6-rlsb.onrender.com/user/v1/deleteSnippet/${id}`,{
                 method : "DELETE"
             });
 
