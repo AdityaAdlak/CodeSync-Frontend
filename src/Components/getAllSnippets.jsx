@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom";
 
 export default function GetAllSnippets(e) {
    
-    const API_URL = process.env.REACT_APP_API_URL;
+    
     const navigate = useNavigate();
     const [getdt, setdt] = useState([]); 
 

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 export default function GetSingleSearchedSnippet({ getTitle }) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
-    const API_URL = process.env.REACT_APP_API_URL;
+    
 
     useEffect(() => {
         if (getTitle) {

@@ -7,7 +7,7 @@ import {toast} from "react-hot-toast";
 
 
 export default function GetSearchedSnippetExist() {
-  const API_URL = process.env.REACT_APP_API_URL;
+ 
   const { state } = useLocation();
   const { searchTag, searchLanguage } = state || {};
   const [finalData, setFinalData] = useState([]);
