@@ -29,6 +29,8 @@ export default function GetAllSnippets(e) {
 
             const result = await response.json();
             setdt(result.data); 
+
+            console.log(result);
         } catch (error) {
             console.log("Error in fetch: ", error);
         }
