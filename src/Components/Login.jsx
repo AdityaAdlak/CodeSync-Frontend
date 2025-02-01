@@ -24,6 +24,7 @@ export default function Login() {
       const response = await fetch(`https://codesync-backend-6-rlsb.onrender.com/user/v1/login`, {
         method: "POST",
         body: JSON.stringify(user),
+        mode: 'no-cors', 
         headers: {
           "Content-Type": "application/json",
         },
