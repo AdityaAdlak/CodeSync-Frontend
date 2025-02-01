@@ -23,7 +23,7 @@ export default function GetAllSnippets(e) {
             const response = await fetch("https://codesync-backend-6-rlsb.onrender.com/user/v1/getAllData");
 
             if (!response.ok) {
-                console.log("Could not get response...");
+                console.log("Not get response...");
                 return;
             }
 
