@@ -20,7 +20,7 @@ export default function GetAllSnippets(e) {
         
         try {
          
-            const response = await fetch("https://codesync-backend-6-rlsb.onrender.com/user/v1/getAllData",{
+            const response = await fetch("https://codesync-backend-complete.onrender.com/user/v1/getAllData",{
                 method : "GET"
             });
 
@@ -42,7 +42,7 @@ export default function GetAllSnippets(e) {
     {
         try {
             console.log(id);
-            const response = await fetch(`https://codesync-backend-6-rlsb.onrender.com/user/v1/deleteSnippet/${id}`,{
+            const response = await fetch(`https://codesync-backend-complete.onrender.com/user/v1/deleteSnippet/${id}`,{
                 method : "DELETE"
             });
 

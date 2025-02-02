@@ -31,7 +31,7 @@ export default function CreateSnippet() {
       }
 
       console.log(addSnippet);
-      const response = await fetch(`https://codesync-backend-6-rlsb.onrender.com/user/v1/createSnippet`, {
+      const response = await fetch(`https://codesync-backend-complete.onrender.com/user/v1/createSnippet`, {
         method: "POST",
         body: JSON.stringify(addSnippet),
         headers: {

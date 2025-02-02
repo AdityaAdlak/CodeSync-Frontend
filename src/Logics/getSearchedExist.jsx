@@ -20,7 +20,7 @@ export default function GetSearchedSnippetExist() {
         try {
 
           const response = await fetch(
-            `https://codesync-backend-6-rlsb.onrender.com/user/v1/getdata/${searchLanguage}/${searchTag}`
+            `https://codesync-backend-complete.onrender.com/user/v1/getdata/${searchLanguage}/${searchTag}`
           );
           const result = await response.json();
 

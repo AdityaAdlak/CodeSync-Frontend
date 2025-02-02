@@ -21,7 +21,7 @@ export default function SignUp() {
       const user = { name, email, password };
       
       
-      const response = await fetch(`https://codesync-backend-6-rlsb.onrender.com/user/v1/signUp`, {
+      const response = await fetch(`https://codesync-backend-complete.onrender.com/user/v1/signUp`, {
         method: "POST",
         body: JSON.stringify(user),
         headers: {
