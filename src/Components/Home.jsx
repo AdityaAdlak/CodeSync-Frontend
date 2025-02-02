@@ -22,9 +22,6 @@ const HomePage = () => {
      
       <section
         className="h-screen flex flex-col justify-center items-center bg-cover bg-center relative bg-no-repeat"
-        style={{
-          backgroundImage: "url('https://path-to-your-background-image.jpg')",
-        }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 text-center">
