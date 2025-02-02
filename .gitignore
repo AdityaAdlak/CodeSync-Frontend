@@ -1,8 +1,7 @@
 # Node modules
 node_modules/
 
-# Build output
-/build/
+
 
 # System files
 .DS_Store
