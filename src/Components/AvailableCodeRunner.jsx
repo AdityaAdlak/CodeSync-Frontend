@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import codeFinder from "../Logics/codeFinder";
 import {NavLink} from "react-router-dom";
 
 
