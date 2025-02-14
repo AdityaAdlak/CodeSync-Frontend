@@ -15,13 +15,17 @@ export default function GetSearchedSnippetExist() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log(searchLanguage);
+    console.log(searchTag)
     if (searchTag && searchLanguage) {
       async function fetchSnippets() {
         try {
 
           const response = await fetch(
            
-            `https://codesync-backend-complete.onrender.com/user/v1/aiSnippet/${searchTag}/${searchLanguage}`
+            `https://codesync-backend-complete.onrender.com/user/v1/aiSnippet/${searchTag}/${searchLanguage}`,{
+              method : "GET"
+            }
             
           );
           const result = await response.json();
