@@ -21,7 +21,7 @@ export default function GetSearchedSnippetExist() {
 
           const response = await fetch(
            
-            `https://codesync-backend-complete.onrender.com/user/v1/aiSnippet/${searchLanguage}/${searchTag}`
+            `https://codesync-backend-complete.onrender.com/user/v1/aiSnippet/${searchTag}/${searchLanguage}`
           );
           const result = await response.json();
           console.log("API response : ",result)
